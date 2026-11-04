@@ -1,0 +1,16 @@
+# API 키: 절대 GitHub에 올리지 않는다
+.streamlit/secrets.toml
+.env
+
+# 수집 원본 데이터: 저장소에 올리지 않는다
+*.csv
+*.xlsx
+
+# 파이썬·운영체제 파일
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+.idea/
