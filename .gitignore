@@ -1,0 +1,10 @@
+.streamlit/secrets.toml
+.env
+*.csv
+*.xlsx
+check*.py
+__pycache__/
+.venv/
+.idea/
+.vscode/
+.DS_Store
