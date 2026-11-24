@@ -103,18 +103,17 @@ with tab2:
     fig_cycle = plot_cycle(filtered_cycle)
     st.plotly_chart(fig_cycle, use_container_width=True)
 
-# --- タブ3: 댓글 반응 ---
+# --- 탭 3: 댓글 반응 ---
 with tab3:
-    col1, col2 = st.columns(2)
-    with col1:
-        ratio_df = sentiment_ratio(filtered_comments)
-        fig_sent = plot_sentiment(ratio_df)
-        st.plotly_chart(fig_sent, use_container_width=True)
+    # 1. 감성 비율 그래프 (전체 너비 사용)
+    ratio_df = sentiment_ratio(filtered_comments)
+    fig_sent = plot_sentiment(ratio_df)
+    st.plotly_chart(fig_sent, use_container_width=True)
 
-    with col2:
-        words_list = top_words(filtered_comments["text"].dropna().tolist(), n=20)
-        fig_words = plot_top_words(words_list)
-        st.plotly_chart(fig_words, use_container_width=True)
+    # 2. 자주 나온 단어 그래프 (전체 너비 사용)
+    words_list = top_words(filtered_comments["text"].dropna().tolist(), n=20)
+    fig_words = plot_top_words(words_list)
+    st.plotly_chart(fig_words, use_container_width=True)
 
     # 感情フィルター（selectbox）
     sentiment_choice = st.selectbox("감성 필터", ["전체", "긍정", "중립", "부정"])
